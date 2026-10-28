@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Astrit Mustafa · Data engineer junior</title>
+<meta name="description" content="Data engineer junior à Liège. Entrepôt de données PostgreSQL et modèle de prédiction pour le SPW, pipelines testés, Power BI. Disponible dès novembre 2026.">
+<meta name="author" content="Astrit Mustafa">
+<meta name="theme-color" content="#FBFCFE">
+<link rel="canonical" href="https://astreetm.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:title" content="Astrit Mustafa · Data engineer junior">
+<meta property="og:description" content="Entrepôt de données et modèle de prédiction pour le SPW, pipelines testés, Power BI. Disponible dès novembre 2026.">
+<meta property="og:url" content="https://astreetm.github.io/">
+<meta property="og:image" content="https://astreetm.github.io/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Astrit Mustafa, data engineer junior : carnet de croquis d'un pipeline de données">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/caveat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Astrit Mustafa",
+  "jobTitle": "Data engineer junior",
+  "url": "https://astreetm.github.io/",
+  "email": "mailto:amustafa360@gmail.com",
+  "address": { "@type": "PostalAddress", "addressRegion": "Liège", "addressCountry": "BE" },
+  "sameAs": ["https://www.linkedin.com/in/astrit-mustafa", "https://github.com/AstreetM"],
+  "knowsAbout": ["Data engineering", "PostgreSQL", "SQL", "Python", "Modélisation dimensionnelle", "Power BI", "Machine learning"]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#haut" aria-label="Astrit Mustafa, retour en haut">astrit<span>.</span></a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li class="nav-optional"><a href="#pipeline">pipeline</a></li>
+        <li><a href="#projets">projets</a></li>
+        <li class="nav-optional"><a href="#competences">compétences</a></li>
+        <li><a href="#cv">cv</a></li>
+        <li class="nav-cta"><a href="#contact">on en parle&nbsp;?</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<section class="hero" id="haut" aria-labelledby="titre-nom">
+  <div class="wrap">
+    <div class="hero-main">
+      <div class="terminal" aria-hidden="true">
+        <p class="type-line"><span class="prompt">&gt;</span> python profil.py --nom astrit</p>
+        <p class="type-line muted">chargement des données ............ ok</p>
+        <p class="type-line">23&nbsp;M de traces · 291&nbsp;101 dossiers · 1 modèle validé</p>
+        <p class="type-line"><span class="prompt">&gt;</span> <span class="cursor">_</span></p>
+      </div>
+      <h1 id="titre-nom">Astrit Mustafa</h1>
+      <p class="lead">Data engineer junior. Je trace le chemin entre la <span class="mark">donnée brute</span> et la <span class="mark">décision</span>.</p>
+      <p class="hero-links">
+        <a href="https://github.com/AstreetM">github.com/AstreetM</a>
+        <a href="https://www.linkedin.com/in/astrit-mustafa">linkedin.com/in/astrit-mustafa</a>
+      </p>
+    </div>
+    <div class="hero-side">
+      <div class="postit">
+        <span class="label">À noter</span>
+        <strong>Disponible dès novembre 2026</strong>
+        <p>Pour un poste de data engineer, en Wallonie ou à Bruxelles.</p>
+        <a href="#contact">me contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pipeline" aria-labelledby="titre-pipeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">projet SPW · MonEspace</p>
+        <h2 id="titre-pipeline">suis le dossier.</h2>
+        <p class="intro">Le trajet d'une démarche en ligne dans l'entrepôt de données que j'ai construit pour le Service public de Wallonie, du fichier brut jusqu'à la prédiction. Clique sur une étape pour la passer à l'encre.</p>
+      </div>
+      <div class="pipeline-controls" data-js-only hidden>
+        <span class="pipeline-status" id="pipeline-status" aria-live="polite">5/5 étapes encrées</span>
+        <button class="btn" type="button" id="pipeline-run"><span aria-hidden="true">▶</span> lancer le pipeline</button>
+        <button class="btn btn-ghost" type="button" id="pipeline-reset" aria-label="Effacer et recommencer"><span aria-hidden="true">↺</span></button>
+      </div>
+    </div>
+
+    <ol class="stages" id="stages">
+      <li>
+        <button class="stage is-inked" type="button" data-stage="1" style="--stage-ink: #3E5C76; --stage-fill: #E3EBF3; --tilt: -1.2deg">
+          <span class="step">Étape 1 / 5</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v11H7z M14 3v4h4 M4 6v15h11"/></svg>
+          <span class="name">sources</span>
+          <span class="text">Chaque mois, une livraison de fichiers&nbsp;: les dossiers et les traces des démarches. Au premier chargement, 1,5&nbsp;M de dossiers et 23&nbsp;M de traces.</span>
+        </button>
+      </li>
+      <li>
+        <button class="stage is-inked" type="button" data-stage="2" style="--stage-ink: #8A4F2A; --stage-fill: #F3E3D6; --tilt: 0.8deg">
+          <span class="step">Étape 2 / 5</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6 M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          <span class="name">bronze</span>
+          <span class="text">Les fichiers arrivent tels quels dans PostgreSQL, sans transformation. Rien n'est perdu avant d'être compris.</span>
+        </button>
+      </li>
+      <li>
+        <button class="stage is-inked" type="button" data-stage="3" style="--stage-ink: #56656F; --stage-fill: #E6EAED; --tilt: -0.6deg">
+          <span class="step">Étape 3 / 5</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg>
+          <span class="name">silver</span>
+          <span class="text">Historique complet, dédoublonné sur l'identifiant, et contrôles qualité&nbsp;: 1,9&nbsp;M d'incohérences isolées dans une table d'anomalies.</span>
+        </button>
+      </li>
+      <li>
+        <button class="stage is-inked" type="button" data-stage="4" style="--stage-ink: #7A5C0A; --stage-fill: #F6EBC8; --tilt: 1.1deg">
+          <span class="step">Étape 4 / 5</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z M12 3v6.5 M12 14.5V21 M3 12h6.5 M14.5 12H21"/></svg>
+          <span class="name">gold</span>
+          <span class="text">Un modèle en étoile lu par Power&nbsp;BI. Les livraisons s'ajoutent en incrémental&nbsp;: le chargement passe de 2&nbsp;h&nbsp;25 à 11&nbsp;min.</span>
+        </button>
+      </li>
+      <li>
+        <button class="stage is-inked" type="button" data-stage="5" style="--stage-ink: #2753C9; --stage-fill: #E1E8FB; --tilt: -0.9deg">
+          <span class="step">Étape 5 / 5</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18 M4 16l5-5 4 3 7-8 M16 6h4v4"/></svg>
+          <span class="name">prédiction</span>
+          <span class="text">Pour chaque brouillon, le risque qu'il ne soit jamais soumis. 14,8&nbsp;% d'erreur en moins que la méthode de référence.</span>
+        </button>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section band" id="projets" aria-labelledby="titre-projets">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="titre-projets">chaque croquis est un projet.</h2>
+        <p class="intro">Choisis-en un pour le passer à l'encre.</p>
+      </div>
+    </div>
+
+    <div class="project-picker" role="group" aria-label="Choisir un projet" data-js-only hidden>
+      <button class="project-card" type="button" data-project="0" aria-controls="projet-abandon" aria-pressed="true">
+        <span class="ctx">SPW · MonEspace · 2026</span>
+        <span class="ttl">Prédire l'abandon des démarches</span>
+      </button>
+      <button class="project-card" type="button" data-project="1" aria-controls="projet-entrepot" aria-pressed="false">
+        <span class="ctx">SPW · MonEspace · 2026</span>
+        <span class="ttl">L'entrepôt de données</span>
+      </button>
+      <button class="project-card" type="button" data-project="2" aria-controls="projet-web" aria-pressed="false">
+        <span class="ctx">SPW · extension web · 2026</span>
+        <span class="ttl">Mesurer l'audience web</span>
+      </button>
+      <button class="project-card" type="button" data-project="3" aria-controls="projet-odoo" aria-pressed="false">
+        <span class="ctx">Wavenet · interne · 2026</span>
+        <span class="ttl">Les rapports Odoo en production</span>
+      </button>
+    </div>
+    <p class="picker-hint" data-js-only hidden>Les flèches ← → du clavier marchent aussi.</p>
+
+    <article class="project-detail" id="projet-abandon" data-project-detail="0">
+      <div class="col">
+        <p class="ctx">SPW · MonEspace · 2026</p>
+        <h3>Prédire l'abandon des démarches</h3>
+        <p>Sur MonEspace, beaucoup de démarches commencées en ligne ne sont jamais envoyées. J'ai construit un modèle qui estime, pour chaque brouillon, le risque qu'il ne soit pas soumis dans les 30&nbsp;jours. Il a été entraîné sur 291&nbsp;101 dossiers, choisi selon une règle fixée à l'avance, puis testé une seule fois sur 116&nbsp;973 dossiers qu'il n'avait jamais vus.</p>
+      </div>
+      <div class="col">
+        <p class="label">Résultat</p>
+        <p class="result"><span class="mark">14,8&nbsp;% d'erreur en moins que la méthode de référence</span> (score de Brier). Parmi les 20&nbsp;% de brouillons jugés les plus à risque, 91&nbsp;% sont abandonnés, contre 79&nbsp;% avec la référence.</p>
+        <p class="note">Ce que le score ne dit pas&nbsp;: qui une relance ferait revenir. Seul un essai de relance mesuré le dira.</p>
+        <p class="stack">Python · scikit-learn · PostgreSQL · Power&nbsp;BI</p>
+      </div>
+    </article>
+
+    <article class="project-detail" id="projet-entrepot" data-project-detail="1">
+      <div class="col">
+        <p class="ctx">SPW · MonEspace · 2026</p>
+        <h3>L'entrepôt de données</h3>
+        <p>Un entrepôt PostgreSQL en trois couches pour analyser les délais de traitement des démarches&nbsp;: bronze pour les fichiers bruts, silver pour l'historique et la qualité, gold pour le modèle en étoile lu par Power&nbsp;BI. Les livraisons mensuelles sont des ajouts&nbsp;: j'ai remplacé le rechargement complet par un chargement incrémental, dédoublonné sur l'identifiant.</p>
+      </div>
+      <div class="col">
+        <p class="label">Résultat</p>
+        <p class="result"><span class="mark">Chargement de 2&nbsp;h&nbsp;25 à 11&nbsp;min par livraison</span>, et 12&nbsp;contrôles automatisés à chaque chargement.</p>
+        <p class="note">Le gain vient du SQL ensembliste&nbsp;: plus de boucles ligne à ligne.</p>
+        <p class="stack">PostgreSQL 16 · SQL · PL/pgSQL · Power&nbsp;BI · DAX</p>
+      </div>
+    </article>
+
+    <article class="project-detail" id="projet-web" data-project-detail="2">
+      <div class="col">
+        <p class="ctx">SPW · extension web · 2026</p>
+        <h3>Mesurer l'audience web</h3>
+        <p>Quatre exports Matomo et WebStats, pour MonEspace et le portail de la Wallonie, intégrés à l'entrepôt et reliés aux dossiers par la date et la démarche. On peut enfin mettre côte à côte les visites et les démarches commencées.</p>
+      </div>
+      <div class="col">
+        <p class="label">Résultat</p>
+        <p class="result"><span class="mark">Un rapport Power&nbsp;BI de 61&nbsp;mesures DAX</span>, et une table de couverture jour par jour qui rend visibles les trous de mesure.</p>
+        <p class="note">Un contrôle d'en-tête refuse dès l'import les colonnes décalées et les fichiers chargés deux fois.</p>
+        <p class="stack">PostgreSQL · Python · Power&nbsp;BI · DAX</p>
+      </div>
+    </article>
+
+    <article class="project-detail" id="projet-odoo" data-project-detail="3">
+      <div class="col">
+        <p class="ctx">Wavenet · interne · 2026</p>
+        <h3>Les rapports Odoo en production</h3>
+        <p>Une chaîne pour faire passer les tableaux de bord Odoo de la base de test à la production&nbsp;: export en JSON, versionnement Git, une branche pour le test et une pour la production.</p>
+      </div>
+      <div class="col">
+        <p class="label">Résultat</p>
+        <p class="result"><span class="mark">Deux outils Python vérifient chaque rapport avant import.</span> La chaîne a été adoptée par l'équipe, et j'ai formé le nouvel analyste.</p>
+        <p class="stack">Odoo 19 · Git · Python</p>
+      </div>
+    </article>
+
+    <div class="side-projects">
+      <h3>et sur mon GitHub.</h3>
+      <ul class="side-list">
+        <li>
+          <p class="desc"><b>AdventureWorks DWH.</b> Un pipeline Python qui transforme une base de plus de 70&nbsp;tables en schéma en étoile&nbsp;: SCD de type 2, quarantaine des lignes invalides, orchestration Airflow et 34&nbsp;tests pytest.<span>Python · SQL Server · Airflow · pytest</span></p>
+          <a href="https://github.com/AstreetM/adventureworks-dwh">voir le code</a>
+        </li>
+        <li>
+          <p class="desc"><b>Global Superstore DWH.</b> Un entrepôt en étoile sur 51&nbsp;290&nbsp;ventes&nbsp;: nettoyage, quarantaine, SCD de type 2, orchestration Airflow sous Docker Compose.<span>Python · SQL Server · Airflow · Docker</span></p>
+          <a href="https://github.com/AstreetM/superstore-dwh">voir le code</a>
+        </li>
+        <li>
+          <p class="desc"><b>Accidents de la route en France.</b> Un entrepôt à deux tables de faits, l'accident et le véhicule, sur les accidents de 2005 à 2016, croisés avec les communes INSEE et 3&nbsp;343&nbsp;radars fixes.<span>SSIS · SQL Server</span></p>
+          <a href="https://github.com/AstreetM/ETL-DW-Accidents-Routiers-France">voir le code</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="competences" aria-labelledby="titre-competences">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="titre-competences">ma boîte à outils.</h2>
+      </div>
+    </div>
+    <div class="query">
+      <p class="query-sql">SELECT outil, niveau, ou_je_l_ai_utilise FROM astrit ORDER BY niveau DESC;</p>
+      <table>
+        <caption class="visually-hidden">Mes outils, mon niveau sur 5 et où je les ai utilisés</caption>
+        <thead>
+          <tr><th scope="col">outil</th><th scope="col">niveau</th><th scope="col">où je l'ai utilisé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SQL et PostgreSQL</td><td><span class="dots" role="img" aria-label="4 sur 5"><span class="on">●●●●</span><span class="off">○</span></span></td><td>Entrepôt MonEspace, chargement incrémental, contrôles qualité</td></tr>
+          <tr><td>Modélisation Kimball</td><td><span class="dots" role="img" aria-label="4 sur 5"><span class="on">●●●●</span><span class="off">○</span></span></td><td>Faits, dimensions, tables de pont, SCD</td></tr>
+          <tr><td>Python</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Modèle d'abandon, scripts d'exploration, outils de contrôle</td></tr>
+          <tr><td>Power&nbsp;BI et DAX</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Rapports MonEspace, 61&nbsp;mesures web</td></tr>
+          <tr><td>Git</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Versionnement des rapports Odoo, projets perso</td></tr>
+          <tr><td>Airflow et Docker</td><td><span class="dots" role="img" aria-label="2 sur 5"><span class="on">●●</span><span class="off">○○○</span></span></td><td>Orchestration de mes projets perso</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="query-note">6 lignes renvoyées.</p>
+
+    <div class="stamps">
+      <div class="stamp" style="color: #8A4F2A; --tilt: -8deg"><span>Technifutur</span><b>Consultant BI</b><span>2026</span></div>
+      <div class="stamp" style="color: #2753C9; --tilt: 6deg"><span>HEPL</span><b>Bachelier</b><span>E-Business 2023</span></div>
+      <div class="stamp" style="color: #56656F; --tilt: -3deg"><span>Google</span><b>Analytics IQ</b><span>2022</span></div>
+      <p class="aside">Et un stage de data &amp; analytics engineer chez Wavenet, d'août à octobre 2026.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cv" aria-labelledby="titre-cv">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="titre-cv">mon cv.</h2>
+      </div>
+    </div>
+    <div class="cv-box">
+      <p class="cv-file">CV_Astrit_Mustafa_Data_Engineer_FR.pdf <span class="ready">· prêt</span></p>
+      <a class="btn btn-blue" href="assets/cv/CV_Astrit_Mustafa_Data_Engineer_FR.pdf" download>télécharger en français</a>
+    </div>
+    <div class="cv-box">
+      <p class="cv-file" lang="en">CV_Astrit_Mustafa_Data_Engineer_EN.pdf <span class="ready">· ready</span></p>
+      <a class="btn" href="assets/cv/CV_Astrit_Mustafa_Data_Engineer_EN.pdf" download hreflang="en">download in English</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="titre-contact">
+  <div class="wrap">
+    <div class="contact-main">
+      <h2 id="titre-contact">on en parle&nbsp;?</h2>
+      <p>Un poste de data engineer, une question sur un de mes projets&nbsp;: écris-moi, je réponds vite.</p>
+    </div>
+    <div class="contact-links">
+      <div class="copy-row">
+        <a href="mailto:amustafa360@gmail.com" id="email-link">amustafa360@gmail.com</a>
+        <button class="copy-btn" type="button" id="copy-email" data-js-only hidden>copier</button>
+        <span class="copy-status" id="copy-status" aria-live="polite"></span>
+      </div>
+      <a href="https://www.linkedin.com/in/astrit-mustafa">linkedin.com/in/astrit-mustafa</a>
+      <a href="https://github.com/AstreetM">github.com/AstreetM</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="hand">dessiné à la main, chargé en SQL.</span>
+    <a href="https://github.com/AstreetM/AstreetM.github.io">code source du site</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
