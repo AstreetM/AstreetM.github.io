@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Astrit Mustafa · Data engineer junior</title>
-<meta name="description" content="Data engineer junior à Liège. Entrepôt de données PostgreSQL et modèle de prédiction pour le SPW, pipelines testés, Power BI. Disponible dès novembre 2026.">
+<meta name="description" content="Data engineer junior à Liège. Entrepôt de données et modèle de prédiction pour le SPW, rapports Odoo en production chez Wavenet, pipeline Databricks. Disponible dès novembre 2026.">
 <meta name="author" content="Astrit Mustafa">
 <meta name="theme-color" content="#FBFCFE">
 <link rel="canonical" href="https://astreetm.github.io/">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:title" content="Astrit Mustafa · Data engineer junior">
-<meta property="og:description" content="Entrepôt de données et modèle de prédiction pour le SPW, pipelines testés, Power BI. Disponible dès novembre 2026.">
+<meta property="og:description" content="Entrepôt de données et modèle de prédiction pour le SPW, rapports Odoo en production, pipeline Databricks. Disponible dès novembre 2026.">
 <meta property="og:url" content="https://astreetm.github.io/">
 <meta property="og:image" content="https://astreetm.github.io/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -36,7 +36,7 @@
   "email": "mailto:amustafa360@gmail.com",
   "address": { "@type": "PostalAddress", "addressRegion": "Liège", "addressCountry": "BE" },
   "sameAs": ["https://www.linkedin.com/in/astrit-mustafa", "https://github.com/AstreetM"],
-  "knowsAbout": ["Data engineering", "PostgreSQL", "SQL", "Python", "Modélisation dimensionnelle", "Power BI", "Machine learning"]
+  "knowsAbout": ["Data engineering", "PostgreSQL", "SQL", "Python", "PySpark", "Databricks", "Modélisation dimensionnelle", "Power BI", "Odoo", "Machine learning"]
 }
 </script>
 </head>
@@ -93,7 +93,7 @@
       <div>
         <p class="eyebrow">projet SPW · MonEspace</p>
         <h2 id="titre-pipeline">suis le dossier.</h2>
-        <p class="intro">Le trajet d'une démarche en ligne dans l'entrepôt de données que j'ai construit pour le Service public de Wallonie, du fichier brut jusqu'à la prédiction. Clique sur une étape pour la passer à l'encre.</p>
+        <p class="intro">Le trajet d'une démarche en ligne dans l'entrepôt de données que j'ai construit pour le Service public de Wallonie, du fichier brut jusqu'à la prédiction. Présenté au SPW, ce travail a été bien accueilli, y compris ce que j'avais fait en plus. Clique sur une étape pour la passer à l'encre.</p>
       </div>
       <div class="pipeline-controls" data-js-only hidden>
         <span class="pipeline-status" id="pipeline-status" aria-live="polite">5/5 étapes encrées</span>
@@ -152,7 +152,7 @@
     <div class="section-head">
       <div>
         <h2 id="titre-projets">chaque croquis est un projet.</h2>
-        <p class="intro">Choisis-en un pour le passer à l'encre.</p>
+        <p class="intro">Pour chacun&nbsp;: le besoin, ce que j'ai fait, la preuve et ce que ça permet. Choisis-en un pour le passer à l'encre.</p>
       </div>
     </div>
 
@@ -169,9 +169,17 @@
         <span class="ctx">SPW · extension web · 2026</span>
         <span class="ttl">Mesurer l'audience web</span>
       </button>
-      <button class="project-card" type="button" data-project="3" aria-controls="projet-odoo" aria-pressed="false">
+      <button class="project-card" type="button" data-project="3" aria-controls="projet-odoo-services" aria-pressed="false">
+        <span class="ctx">Wavenet · Odoo 19 · 2026</span>
+        <span class="ttl">Des rapports pour chaque service</span>
+      </button>
+      <button class="project-card" type="button" data-project="4" aria-controls="projet-odoo" aria-pressed="false">
         <span class="ctx">Wavenet · interne · 2026</span>
         <span class="ttl">Les rapports Odoo en production</span>
+      </button>
+      <button class="project-card" type="button" data-project="5" aria-controls="projet-trains" aria-pressed="false">
+        <span class="ctx">Projet perso · Databricks · 2026</span>
+        <span class="ttl">La ponctualité des trains belges</span>
       </button>
     </div>
     <p class="picker-hint" data-js-only hidden>Les flèches ← → du clavier marchent aussi.</p>
@@ -180,11 +188,16 @@
       <div class="col">
         <p class="ctx">SPW · MonEspace · 2026</p>
         <h3>Prédire l'abandon des démarches</h3>
-        <p>Sur MonEspace, beaucoup de démarches commencées en ligne ne sont jamais envoyées. J'ai construit un modèle qui estime, pour chaque brouillon, le risque qu'il ne soit pas soumis dans les 30&nbsp;jours. Il a été entraîné sur 291&nbsp;101 dossiers, choisi selon une règle fixée à l'avance, puis testé une seule fois sur 116&nbsp;973 dossiers qu'il n'avait jamais vus.</p>
+        <p class="label">Le besoin</p>
+        <p>Sur MonEspace, beaucoup de démarches commencées en ligne ne sont jamais envoyées. Repérer tôt celles qui risquent de l'être permet d'agir à temps.</p>
+        <p class="label">Ce que j'ai fait</p>
+        <p>Un modèle qui estime, pour chaque brouillon, le risque qu'il ne soit pas soumis dans les 30&nbsp;jours. Il a été entraîné sur 291&nbsp;101 dossiers, choisi selon une règle fixée à l'avance, puis testé une seule fois sur 116&nbsp;973 dossiers qu'il n'avait jamais vus.</p>
       </div>
       <div class="col">
-        <p class="label">Résultat</p>
+        <p class="label">La preuve</p>
         <p class="result"><span class="mark">14,8&nbsp;% d'erreur en moins que la méthode de référence</span> (score de Brier). Parmi les 20&nbsp;% de brouillons jugés les plus à risque, 91&nbsp;% sont abandonnés, contre 79&nbsp;% avec la référence.</p>
+        <p class="label">Ce que ça permet</p>
+        <p class="value">Relancer en priorité les brouillons les plus à risque, au lieu de relancer tout le monde.</p>
         <p class="note">Ce que le score ne dit pas&nbsp;: qui une relance ferait revenir. Seul un essai de relance mesuré le dira.</p>
         <p class="stack">Python · scikit-learn · PostgreSQL · Power&nbsp;BI</p>
       </div>
@@ -194,11 +207,16 @@
       <div class="col">
         <p class="ctx">SPW · MonEspace · 2026</p>
         <h3>L'entrepôt de données</h3>
-        <p>Un entrepôt PostgreSQL en trois couches pour analyser les délais de traitement des démarches&nbsp;: bronze pour les fichiers bruts, silver pour l'historique et la qualité, gold pour le modèle en étoile lu par Power&nbsp;BI. Les livraisons mensuelles sont des ajouts&nbsp;: j'ai remplacé le rechargement complet par un chargement incrémental, dédoublonné sur l'identifiant.</p>
+        <p class="label">Le besoin</p>
+        <p>Analyser les délais de traitement des démarches à partir de livraisons mensuelles de fichiers&nbsp;: 1,5&nbsp;M de dossiers et 23&nbsp;M de traces au premier chargement.</p>
+        <p class="label">Ce que j'ai fait</p>
+        <p>Un entrepôt PostgreSQL en trois couches&nbsp;: bronze pour les fichiers bruts, silver pour l'historique et la qualité, gold pour le modèle en étoile lu par Power&nbsp;BI. Les livraisons mensuelles sont des ajouts&nbsp;: j'ai remplacé le rechargement complet par un chargement incrémental, dédoublonné sur l'identifiant.</p>
       </div>
       <div class="col">
-        <p class="label">Résultat</p>
+        <p class="label">La preuve</p>
         <p class="result"><span class="mark">Chargement de 2&nbsp;h&nbsp;25 à 11&nbsp;min par livraison</span>, et 12&nbsp;contrôles automatisés à chaque chargement.</p>
+        <p class="label">Ce que ça permet</p>
+        <p class="value">Suivre les délais de traitement de chaque démarche dès la livraison du mois, sur des chiffres contrôlés.</p>
         <p class="note">Le gain vient du SQL ensembliste&nbsp;: plus de boucles ligne à ligne.</p>
         <p class="stack">PostgreSQL 16 · SQL · PL/pgSQL · Power&nbsp;BI · DAX</p>
       </div>
@@ -208,27 +226,90 @@
       <div class="col">
         <p class="ctx">SPW · extension web · 2026</p>
         <h3>Mesurer l'audience web</h3>
-        <p>Quatre exports Matomo et WebStats, pour MonEspace et le portail de la Wallonie, intégrés à l'entrepôt et reliés aux dossiers par la date et la démarche. On peut enfin mettre côte à côte les visites et les démarches commencées.</p>
+        <p class="label">Le besoin</p>
+        <p>Savoir si la fréquentation des sites mène à des démarches&nbsp;: les statistiques web et les dossiers vivaient chacun de leur côté.</p>
+        <p class="label">Ce que j'ai fait</p>
+        <p>Quatre exports Matomo et WebStats, pour MonEspace et le portail de la Wallonie, intégrés à l'entrepôt et reliés aux dossiers par la date et la démarche.</p>
       </div>
       <div class="col">
-        <p class="label">Résultat</p>
+        <p class="label">La preuve</p>
         <p class="result"><span class="mark">Un rapport Power&nbsp;BI de 61&nbsp;mesures DAX</span>, et une table de couverture jour par jour qui rend visibles les trous de mesure.</p>
+        <p class="label">Ce que ça permet</p>
+        <p class="value">Mettre côte à côte les visites et les démarches commencées, sans se fier aux jours mal mesurés.</p>
         <p class="note">Un contrôle d'en-tête refuse dès l'import les colonnes décalées et les fichiers chargés deux fois.</p>
         <p class="stack">PostgreSQL · Python · Power&nbsp;BI · DAX</p>
       </div>
     </article>
 
-    <article class="project-detail" id="projet-odoo" data-project-detail="3">
+    <article class="project-detail" id="projet-odoo-services" data-project-detail="3">
+      <div class="col">
+        <p class="ctx">Wavenet · Odoo 19 · 2026</p>
+        <h3>Des rapports pour chaque service</h3>
+        <p class="label">Le besoin</p>
+        <p>Wavenet suivait ses employés, son CRM, sa flotte de voitures et ses contacts clients dans des fichiers Excel et des rapports Power&nbsp;BI alimentés par des extractions. Les rapports devaient vivre dans Odoo, au plus près des données.</p>
+        <p class="label">Ce que j'ai fait</p>
+        <p>Je suis allé voir les services pour comprendre ce qu'ils suivaient vraiment, puis j'ai construit les tableaux de bord dans Odoo&nbsp;: indicateurs, barres simples et empilées, camemberts et anneaux, listes et tableaux croisés. Avec Studio, j'ai créé les champs et les champs liés qui manquaient. J'ai aussi ajouté des rapports qui n'existaient pas, comme la pyramide des âges, et un rapport sur la qualité des données, de ma propre initiative.</p>
+      </div>
+      <div class="col">
+        <p class="label">La preuve</p>
+        <p class="result"><span class="mark">Les fichiers Excel et les rapports Power&nbsp;BI ont été remplacés.</span> Les rapports employés, CRM, flotte et contacts clients sont en production, validés par Wavenet.</p>
+        <p class="label">Ce que ça permet</p>
+        <p class="value">Des chiffres à jour dans l'outil où l'on travaille, sans export ni copier-coller&nbsp;: le pipeline commercial par mois de clôture, les véhicules à renouveler, la pyramide des âges.</p>
+        <p class="note">En montrant les premiers rapports aux équipes RH et flotte, j'ai vu qu'elles voulaient des listes claires plutôt que des graphiques. On est passés aux listes pour elles.</p>
+        <p class="stack">Odoo 19 · Studio · tableaux de bord Odoo</p>
+      </div>
+      <figure class="shot sketch">
+        <div class="sketch-grid" role="img" aria-label="Croquis des types de graphiques construits dans Odoo : indicateurs, barres empilées, anneau, pyramide des âges et listes. Données fictives."><svg viewBox="-6 0 192 240" aria-hidden="true" focusable="false"><g transform="rotate(-1.2 90 110)"><rect class="frame" x="2" y="8" width="176" height="184" rx="4"/><rect class="ink" x="14" y="44" width="46" height="96" rx="3"/><line class="pencil" x1="22" y1="62" x2="56" y2="62"/><line class="ink fat" x1="23" y1="98" x2="47" y2="98"/><line class="pencil thin" x1="22" y1="120" x2="44" y2="120"/><rect class="ink" x="68" y="44" width="46" height="96" rx="3"/><line class="pencil" x1="76" y1="62" x2="106" y2="62"/><line class="ink fat" x1="77" y1="98" x2="95" y2="98"/><line class="pencil thin" x1="76" y1="120" x2="98" y2="120"/><rect class="ink" x="122" y="44" width="46" height="96" rx="3"/><line class="pencil" x1="130" y1="62" x2="156" y2="62"/><line class="ink fat" x1="131" y1="98" x2="159" y2="98"/><line class="pencil thin" x1="130" y1="120" x2="152" y2="120"/><text x="90" y="226">indicateurs</text></g></svg><svg viewBox="-6 0 192 240" aria-hidden="true" focusable="false"><g transform="rotate(0.8 90 110)"><rect class="frame" x="2" y="8" width="176" height="184" rx="4"/><line class="ink" x1="16" y1="168" x2="166" y2="168"/><line class="ink" x1="16" y1="168" x2="16" y2="34"/><rect class="seg s-blue" x="26" y="148" width="20" height="20"/><rect class="seg s-soft" x="26" y="118" width="20" height="30"/><rect class="seg s-high" x="26" y="108" width="20" height="10"/><rect class="seg s-blue" x="54" y="128" width="20" height="40"/><rect class="seg s-soft" x="54" y="76" width="20" height="52"/><rect class="seg s-high" x="54" y="60" width="20" height="16"/><rect class="seg s-blue" x="82" y="142" width="20" height="26"/><rect class="seg s-soft" x="82" y="108" width="20" height="34"/><rect class="seg s-high" x="82" y="86" width="20" height="22"/><rect class="seg s-blue" x="110" y="112" width="20" height="56"/><rect class="seg s-soft" x="110" y="70" width="20" height="42"/><rect class="seg s-high" x="110" y="58" width="20" height="12"/><rect class="seg s-blue" x="138" y="152" width="20" height="16"/><rect class="seg s-soft" x="138" y="130" width="20" height="22"/><rect class="seg s-high" x="138" y="120" width="20" height="10"/><text x="90" y="226">barres empilées</text></g></svg><svg viewBox="-6 0 192 240" aria-hidden="true" focusable="false"><g transform="rotate(-0.6 90 110)"><rect class="frame" x="2" y="8" width="176" height="184" rx="4"/><circle class="arc s-blue" cx="90" cy="98" r="46" stroke-dasharray="144.5 144.5" stroke-dashoffset="-0.0" transform="rotate(-90 90 98)"/><circle class="arc s-soft" cx="90" cy="98" r="46" stroke-dasharray="86.7 202.3" stroke-dashoffset="-144.5" transform="rotate(-90 90 98)"/><circle class="arc s-high" cx="90" cy="98" r="46" stroke-dasharray="57.8 231.2" stroke-dashoffset="-231.2" transform="rotate(-90 90 98)"/><circle class="ink" cx="90" cy="98" r="59"/><circle class="ink" cx="90" cy="98" r="33"/><text x="90" y="226">anneau</text></g></svg><svg viewBox="-6 0 192 240" aria-hidden="true" focusable="false"><g transform="rotate(1.0 90 110)"><rect class="frame" x="2" y="8" width="176" height="184" rx="4"/><line class="ink" x1="90" y1="34" x2="90" y2="172"/><rect class="seg s-soft" x="74" y="40" width="16" height="14"/><rect class="seg s-bronze" x="90" y="40" width="14" height="14"/><rect class="seg s-soft" x="60" y="58" width="30" height="14"/><rect class="seg s-bronze" x="90" y="58" width="28" height="14"/><rect class="seg s-soft" x="44" y="76" width="46" height="14"/><rect class="seg s-bronze" x="90" y="76" width="44" height="14"/><rect class="seg s-soft" x="32" y="94" width="58" height="14"/><rect class="seg s-bronze" x="90" y="94" width="56" height="14"/><rect class="seg s-soft" x="36" y="112" width="54" height="14"/><rect class="seg s-bronze" x="90" y="112" width="60" height="14"/><rect class="seg s-soft" x="52" y="130" width="38" height="14"/><rect class="seg s-bronze" x="90" y="130" width="42" height="14"/><rect class="seg s-soft" x="70" y="148" width="20" height="14"/><rect class="seg s-bronze" x="90" y="148" width="24" height="14"/><text x="90" y="226">pyramide des âges</text></g></svg><svg viewBox="-6 0 192 240" aria-hidden="true" focusable="false"><g transform="rotate(-0.9 90 110)"><rect class="frame" x="2" y="8" width="176" height="184" rx="4"/><line class="ink fat" x1="16" y1="44" x2="164" y2="44"/><rect class="ink" x="16" y="62" width="10" height="10" rx="2"/><line class="pencil" x1="36" y1="67" x2="154" y2="67"/><rect class="ink" x="16" y="82" width="10" height="10" rx="2"/><line class="pencil" x1="36" y1="87" x2="132" y2="87"/><rect class="s-high" x="12" y="99" width="158" height="16" rx="3"/><rect class="ink" x="16" y="102" width="10" height="10" rx="2"/><line class="pencil" x1="36" y1="107" x2="164" y2="107"/><rect class="ink" x="16" y="122" width="10" height="10" rx="2"/><line class="pencil" x1="36" y1="127" x2="120" y2="127"/><rect class="ink" x="16" y="142" width="10" height="10" rx="2"/><line class="pencil" x1="36" y1="147" x2="146" y2="147"/><rect class="ink" x="16" y="162" width="10" height="10" rx="2"/><line class="pencil" x1="36" y1="167" x2="136" y2="167"/><text x="90" y="226">listes</text></g></svg></div>
+        <figcaption>Les types de graphiques construits, redessinés au crayon. Données fictives.</figcaption>
+      </figure>
+    </article>
+
+    <article class="project-detail" id="projet-odoo" data-project-detail="4">
       <div class="col">
         <p class="ctx">Wavenet · interne · 2026</p>
         <h3>Les rapports Odoo en production</h3>
+        <p class="label">Le besoin</p>
+        <p>Une restauration de la base de test avait effacé des semaines de rapports. Il fallait ne plus rien perdre, et passer proprement du test à la production.</p>
+        <p class="label">Ce que j'ai fait</p>
         <p>Une chaîne pour faire passer les tableaux de bord Odoo de la base de test à la production&nbsp;: export en JSON, versionnement Git, une branche pour le test et une pour la production.</p>
       </div>
       <div class="col">
-        <p class="label">Résultat</p>
+        <p class="label">La preuve</p>
         <p class="result"><span class="mark">Deux outils Python vérifient chaque rapport avant import.</span> La chaîne a été adoptée par l'équipe, et j'ai formé le nouvel analyste.</p>
+        <p class="label">Ce que ça permet</p>
+        <p class="value">Chaque version d'un rapport est gardée&nbsp;: on peut la relire, la comparer ou la restaurer.</p>
+        <p class="note">C'était mon premier projet avec Git.</p>
         <p class="stack">Odoo 19 · Git · Python</p>
       </div>
+    </article>
+
+    <article class="project-detail" id="projet-trains" data-project-detail="5">
+      <div class="col">
+        <p class="ctx">Projet perso · Databricks · 2026</p>
+        <h3>La ponctualité des trains belges</h3>
+        <p class="label">Le besoin, imaginé</p>
+        <p>Un responsable de la ponctualité veut savoir où, quand et sur quels trains le réseau perd du temps, pour cibler ses actions au lieu de suivre un seul pourcentage national.</p>
+        <p class="label">Ce que j'ai fait</p>
+        <p>Un pipeline Databricks sur les données brutes d'Infrabel, soit 4&nbsp;millions de passages en août et septembre 2026&nbsp;: Auto Loader en bronze, quarantaine et MERGE incrémental en silver, modèle en étoile en SQL, un job qui démarre à l'arrivée d'un fichier, et un tableau de bord.</p>
+      </div>
+      <div class="col">
+        <p class="label">La preuve</p>
+        <p class="result"><span class="mark">91,9&nbsp;% des trains à l'heure au terminus.</span> Sur la jonction Nord-Midi, un train perd 11&nbsp;secondes à quai, contre 6 ailleurs. Huit des quinze points les moins ponctuels sont en province de Liège.</p>
+        <p class="label">Ce que ça permet</p>
+        <p class="value">Cibler les actions là où le réseau perd du temps, et poser les bonnes questions&nbsp;:</p>
+        <ul class="questions">
+          <li>les secondes perdues à quai viennent-elles de la montée des voyageurs, ou d'un train qui attend sa voie&nbsp;?</li>
+          <li>les retards liégeois arrivent-ils d'Allemagne, par Aix-la-Chapelle&nbsp;?</li>
+          <li>faut-il plus de marge dans les horaires du soir en semaine&nbsp;?</li>
+        </ul>
+        <p class="note">Le besoin est imaginé, les données sont réelles.</p>
+        <p class="stack">Databricks · PySpark · Delta · SQL · AI/BI</p>
+        <p class="links"><a href="https://github.com/AstreetM/infrabel-ponctualite">voir le code</a></p>
+      </div>
+      <figure class="shot">
+        <a href="assets/img/projets/infrabel-tableau-de-bord.webp" title="Voir l'image en grand"><img src="assets/img/projets/infrabel-tableau-de-bord.webp" width="1400" height="1416" loading="lazy" decoding="async" alt="Le tableau de bord de la ponctualité des trains belges : trois indicateurs, la ponctualité jour par jour, les quinze points les moins ponctuels, la ponctualité selon l'heure, par type de train, sur la jonction Nord-Midi et le long du trajet."></a>
+        <figcaption>Le tableau de bord, publié dans Databricks. Clique dessus pour l'agrandir.</figcaption>
+      </figure>
     </article>
 
     <div class="side-projects">
@@ -271,11 +352,13 @@
           <tr><td>Python</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Modèle d'abandon, scripts d'exploration, outils de contrôle</td></tr>
           <tr><td>Power&nbsp;BI et DAX</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Rapports MonEspace, 61&nbsp;mesures web</td></tr>
           <tr><td>Git</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Versionnement des rapports Odoo, projets perso</td></tr>
+          <tr><td>Databricks et PySpark</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Pipeline Infrabel, Auto Loader, Delta, job, tableau de bord</td></tr>
+          <tr><td>Odoo 19 et Studio</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Rapports en production pour les services de Wavenet</td></tr>
           <tr><td>Airflow et Docker</td><td><span class="dots" role="img" aria-label="2 sur 5"><span class="on">●●</span><span class="off">○○○</span></span></td><td>Orchestration de mes projets perso</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="query-note">6 lignes renvoyées.</p>
+    <p class="query-note">8 lignes renvoyées.</p>
 
     <div class="stamps">
       <div class="stamp" style="color: #8A4F2A; --tilt: -8deg"><span>Technifutur</span><b>Consultant BI</b><span>2026</span></div>

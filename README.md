@@ -7,7 +7,7 @@ Le site est pensé comme un carnet de croquis. Les étapes du pipeline et les pr
 ## Ce qu'il contient
 
 - **Le pipeline du projet SPW** : le trajet d'un dossier MonEspace dans l'entrepôt, en cinq étapes (sources, bronze, silver, gold, prédiction).
-- **Les projets** : la prédiction de l'abandon des démarches, l'entrepôt de données, l'audience web pour le SPW, la mise en production des rapports Odoo chez Wavenet, et les projets publiés sur GitHub.
+- **Les projets**, chacun en quatre temps (le besoin, ce que j'ai fait, la preuve, ce que ça permet) : la prédiction de l'abandon des démarches, l'entrepôt de données et l'audience web pour le SPW, les rapports Odoo des services de Wavenet et leur mise en production, la ponctualité des trains belges sur Databricks, et les projets publiés sur GitHub.
 - **Les compétences, le CV en français et en anglais, et le contact.**
 
 ## Technique
@@ -24,7 +24,7 @@ assets/css/style.css    les styles
 assets/js/main.js       le pipeline, le choix des projets, la copie de l'adresse
 assets/cv/              les CV en PDF
 assets/fonts/           les polices et leurs licences
-assets/img/             l'icône et l'image de partage
+assets/img/             l'icône, l'image de partage et les images des projets
 ```
 
 ## Voir le site en local
