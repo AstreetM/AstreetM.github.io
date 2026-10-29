@@ -306,3 +306,64 @@ button { font: inherit; color: inherit; }
 .sketch .arc.s-soft { fill: none; stroke: var(--blue-soft); }
 .sketch .arc.s-high { fill: none; stroke: var(--highlight); }
 .sketch text { font-family: var(--font-hand); font-size: 26px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+
+/* Le modèle en étoile : chaque question passe à l'encre les dimensions qu'elle utilise */
+.questions-picker { display: flex; flex-wrap: wrap; gap: 10px; }
+.question-chip {
+  font-family: var(--font-body); font-size: 15px; line-height: 1.3; text-align: left; cursor: pointer;
+  padding: 9px 15px; border-radius: 999px; border: 1.5px dashed var(--pencil-line); background: var(--paper-2); color: var(--ink-2);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.question-chip:hover { border-color: var(--ink-2); }
+.question-chip[aria-pressed="true"] { border: 2px solid var(--ink); background: var(--postit); color: var(--ink); }
+
+.star { position: relative; aspect-ratio: 16 / 10; max-width: 860px; margin: 28px auto 0; }
+.star-links { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.star-links line { stroke: var(--pencil-line); stroke-width: 1.5; stroke-dasharray: 5 5; vector-effect: non-scaling-stroke; transition: stroke 0.3s ease; }
+.star-links line.is-inked { stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: none; }
+.star-box {
+  position: absolute; width: 26%; padding: 12px 14px; background: var(--paper-2);
+  border: 1.5px dashed var(--pencil-line); transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.star-box p { margin: 0; }
+.star-box .star-name { font-family: var(--font-mono); font-size: 12.5px; color: var(--pencil); }
+.star-box .star-q { font-family: var(--font-hand); font-weight: 700; font-size: 27px; line-height: 1; color: var(--pencil); margin: 4px 0 6px; }
+.star-box .star-grain { font-size: 14px; color: var(--pencil); margin-bottom: 6px; }
+.star-cols { list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: 12px; line-height: 1.7; color: var(--pencil); overflow-wrap: anywhere; }
+.star-cols li { width: fit-content; max-width: 100%; }
+.star-cols li.is-used { background: linear-gradient(transparent 55%, var(--highlight) 55%); color: var(--ink); }
+.star-box.is-inked { border: 2px solid var(--box-ink, var(--ink)); background: var(--box-fill, var(--paper-2)); }
+.star-box.is-inked .star-name { color: var(--box-ink, var(--ink)); }
+.star-box.is-inked .star-q, .star-box.is-inked .star-grain, .star-box.is-inked .star-cols { color: var(--ink); }
+.star-fact { --box-ink: var(--ink); --box-fill: #FFFFFF; left: 35%; top: 22%; width: 30%; z-index: 1; }
+.star-fact.is-inked { border-width: 2.5px; }
+.star-dim[data-dim="date"] { left: 1%; top: 2%; }
+.star-dim[data-dim="heure"] { left: 73%; top: 2%; }
+.star-dim[data-dim="gare"] { left: 1%; top: 58%; }
+.star-dim[data-dim="relation"] { left: 73%; top: 58%; }
+.star-dim[data-dim="operateur"] { left: 37%; top: 80%; }
+
+.q-detail { margin-top: 26px; }
+.q-detail h3 { font-size: clamp(30px, 3.6vw, 38px); }
+.project-detail p code { font-family: var(--font-mono); font-size: 0.86em; color: var(--ink); }
+.q-sql { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: 12.5px; line-height: 1.65; padding: 14px 16px; overflow-x: auto; white-space: pre; }
+.model-note { font-family: var(--font-hand); font-size: 27px; line-height: 1.2; color: var(--ink-2); margin: 24px 0 0; max-width: 62ch; }
+
+/* Ma façon de travailler */
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.principle { border: 1.5px dashed var(--pencil-line); background: var(--paper); padding: 22px 22px 20px; transform: rotate(var(--tilt, 0deg)); }
+.principle h3 { font-family: var(--font-hand); font-weight: 700; font-size: 34px; line-height: 1; margin: 0 0 12px; }
+.principle p { margin: 0; color: var(--ink-2); }
+.principle .proof { margin-top: 14px; font-family: var(--font-mono); font-size: 13px; line-height: 1.5; color: var(--pencil); }
+
+@media (max-width: 720px) {
+  .star { aspect-ratio: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .star-links { display: none; }
+  .star-box, .star-fact, .star-dim[data-dim] { position: static; width: auto; }
+  .star-fact { grid-column: 1 / -1; }
+  .star-dim[data-dim="operateur"] { grid-column: 1 / -1; }
+  .star-box .star-q { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .question-chip, .star-box, .star-links line { transition: none; }
+}

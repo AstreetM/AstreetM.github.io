@@ -1,4 +1,4 @@
-/* Interactions du carnet : le pipeline à encrer, le choix des projets et la copie de l'adresse.
+/* Interactions du carnet : le pipeline à encrer, le choix des projets, le modèle en étoile et la copie de l'adresse.
    Sans JavaScript, tout reste lisible : les étapes sont déjà encrées et tous les projets sont affichés. */
 (function () {
   'use strict';
@@ -154,6 +154,103 @@
       });
     });
     selectProject(0);
+  }
+
+  /* ---------- Les liens vers un projet précis ---------- */
+  // Un lien comme #projet-trains ouvre le bon projet avant d'y descendre.
+  function indexOfProject(hash) {
+    for (var i = 0; i < details.length; i++) {
+      if ('#' + details[i].id === hash) {
+        return Number(details[i].getAttribute('data-project-detail'));
+      }
+    }
+    return -1;
+  }
+
+  if (cards.length && details.length) {
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[href^="#projet-"]') : null;
+      if (!link) {
+        return;
+      }
+      var index = indexOfProject(link.getAttribute('href'));
+      if (index < 0) {
+        return;
+      }
+      event.preventDefault();
+      selectProject(index);
+      details[index].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      if (window.history && history.replaceState) {
+        history.replaceState(null, '', link.getAttribute('href'));
+      }
+    });
+    var fromHash = indexOfProject(window.location.hash);
+    if (fromHash >= 0) {
+      selectProject(fromHash);
+      details[fromHash].scrollIntoView({ block: 'start' });
+    }
+  }
+
+  /* ---------- Le modèle en étoile ---------- */
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.question-chip'));
+  var answers = Array.prototype.slice.call(document.querySelectorAll('[data-question-detail]'));
+  var dimBoxes = Array.prototype.slice.call(document.querySelectorAll('.star-dim'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.star-links line'));
+  var columns = Array.prototype.slice.call(document.querySelectorAll('.star-cols li'));
+
+  function words(el, name) {
+    return (el.getAttribute(name) || '').split(' ').filter(Boolean);
+  }
+
+  function selectQuestion(index, opts) {
+    opts = opts || {};
+    var dims = words(chips[index], 'data-dims');
+    var used = words(chips[index], 'data-cols');
+    chips.forEach(function (chip, i) {
+      var selected = i === index;
+      chip.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      chip.tabIndex = selected ? 0 : -1;
+      if (selected && opts.focus) {
+        chip.focus();
+      }
+    });
+    dimBoxes.forEach(function (box) {
+      box.classList.toggle('is-inked', dims.indexOf(box.getAttribute('data-dim')) !== -1);
+    });
+    links.forEach(function (line) {
+      line.classList.toggle('is-inked', dims.indexOf(line.getAttribute('data-dim')) !== -1);
+    });
+    columns.forEach(function (col) {
+      col.classList.toggle('is-used', used.indexOf(col.getAttribute('data-col')) !== -1);
+    });
+    answers.forEach(function (answer) {
+      answer.hidden = Number(answer.getAttribute('data-question-detail')) !== index;
+    });
+  }
+
+  if (chips.length && answers.length) {
+    chips.forEach(function (chip, i) {
+      chip.addEventListener('click', function () {
+        selectQuestion(i);
+      });
+      chip.addEventListener('keydown', function (event) {
+        var next = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          next = (i + 1) % chips.length;
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          next = (i - 1 + chips.length) % chips.length;
+        } else if (event.key === 'Home') {
+          next = 0;
+        } else if (event.key === 'End') {
+          next = chips.length - 1;
+        }
+        if (next !== null) {
+          event.preventDefault();
+          selectQuestion(next, { focus: true });
+        }
+      });
+    });
+    selectQuestion(0);
   }
 
   /* ---------- Copier l'adresse ---------- */

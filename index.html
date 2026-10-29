@@ -50,6 +50,8 @@
       <ul>
         <li class="nav-optional"><a href="#pipeline">pipeline</a></li>
         <li><a href="#projets">projets</a></li>
+        <li class="nav-optional"><a href="#modele">modèle</a></li>
+        <li class="nav-optional"><a href="#methode">méthode</a></li>
         <li class="nav-optional"><a href="#competences">compétences</a></li>
         <li><a href="#cv">cv</a></li>
         <li class="nav-cta"><a href="#contact">on en parle&nbsp;?</a></li>
@@ -70,7 +72,7 @@
         <p class="type-line"><span class="prompt">&gt;</span> <span class="cursor">_</span></p>
       </div>
       <h1 id="titre-nom">Astrit Mustafa</h1>
-      <p class="lead">Data engineer junior. Je trace le chemin entre la <span class="mark">donnée brute</span> et la <span class="mark">décision</span>.</p>
+      <p class="lead">Data engineer junior, tourné vers le client. Je trace le chemin entre la <span class="mark">donnée brute</span> et la <span class="mark">décision</span>.</p>
       <p class="hero-links">
         <a href="https://github.com/AstreetM">github.com/AstreetM</a>
         <a href="https://www.linkedin.com/in/astrit-mustafa">linkedin.com/in/astrit-mustafa</a>
@@ -332,6 +334,202 @@
   </div>
 </section>
 
+<section class="section" id="modele" aria-labelledby="titre-modele">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">projet Infrabel · modèle en étoile</p>
+        <h2 id="titre-modele">pose une question au modèle.</h2>
+        <p class="intro">Avant le tableau de bord, il y a le modèle&nbsp;: une table de faits au grain du passage, et cinq dimensions qui répondent chacune à une question simple. Choisis une question du métier pour voir le chemin qu'elle prend dans l'étoile.</p>
+      </div>
+    </div>
+
+    <div class="questions-picker" role="group" aria-label="Choisir une question du métier" data-js-only hidden>
+      <button class="question-chip" type="button" data-question="0" data-dims="gare" data-cols="nom_nl a_l_heure" aria-controls="question-ou" aria-pressed="true">Où le réseau perd-il du temps&nbsp;?</button>
+      <button class="question-chip" type="button" data-question="1" data-dims="date heure" data-cols="type_jour heure a_l_heure" aria-controls="question-quand" aria-pressed="false">Quand les retards montent-ils&nbsp;?</button>
+      <button class="question-chip" type="button" data-question="2" data-dims="relation operateur" data-cols="type_train operateur_nom a_l_heure est_terminus" aria-controls="question-trains" aria-pressed="false">Quels trains souffrent le plus&nbsp;?</button>
+      <button class="question-chip" type="button" data-question="3" data-dims="gare" data-cols="est_jonction_nord_midi retard_pris_a_quai_min" aria-controls="question-jonction" aria-pressed="false">La jonction Nord-Midi freine-t-elle les trains&nbsp;?</button>
+      <button class="question-chip" type="button" data-question="4" data-dims="" data-cols="rang_arret retard_arrivee_min" aria-controls="question-trajet" aria-pressed="false">Le retard grandit-il le long du trajet&nbsp;?</button>
+    </div>
+
+    <div class="star" role="img" aria-label="Le modèle en étoile : la table de faits fait_passage au centre, reliée à dim_date, dim_heure, dim_gare, dim_relation et dim_operateur.">
+      <svg class="star-links" viewBox="0 0 100 62.5" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <line class="is-inked" data-dim="date" x1="50" y1="31" x2="14.5" y2="7.5"/>
+        <line class="is-inked" data-dim="heure" x1="50" y1="31" x2="85.5" y2="7.5"/>
+        <line class="is-inked" data-dim="gare" x1="50" y1="31" x2="14.5" y2="44"/>
+        <line class="is-inked" data-dim="relation" x1="50" y1="31" x2="85.5" y2="44"/>
+        <line class="is-inked" data-dim="operateur" x1="50" y1="31" x2="50" y2="56"/>
+      </svg>
+      <div class="star-box star-fact is-inked" aria-hidden="true">
+        <p class="star-name">fait_passage</p>
+        <p class="star-q">combien&nbsp;?</p>
+        <p class="star-grain">un train, à un point, un jour</p>
+        <ul class="star-cols">
+          <li data-col="a_l_heure">a_l_heure</li>
+          <li data-col="retard_arrivee_min">retard_<wbr>arrivee_<wbr>min</li>
+          <li data-col="retard_pris_a_quai_min">retard_<wbr>pris_<wbr>a_<wbr>quai_<wbr>min</li>
+          <li data-col="rang_arret">rang_arret</li>
+          <li data-col="est_terminus">est_terminus</li>
+        </ul>
+      </div>
+      <div class="star-box star-dim is-inked" data-dim="date" aria-hidden="true" style="--box-ink: #3E5C76; --box-fill: #E3EBF3">
+        <p class="star-name">dim_date</p>
+        <p class="star-q">quel jour&nbsp;?</p>
+        <ul class="star-cols"><li data-col="type_jour">type_jour</li><li data-col="est_ferie">est_ferie</li></ul>
+      </div>
+      <div class="star-box star-dim is-inked" data-dim="heure" aria-hidden="true" style="--box-ink: #8A4F2A; --box-fill: #F3E3D6">
+        <p class="star-name">dim_heure</p>
+        <p class="star-q">à quelle heure&nbsp;?</p>
+        <ul class="star-cols"><li data-col="heure">heure</li><li data-col="est_pointe">est_pointe</li></ul>
+      </div>
+      <div class="star-box star-dim is-inked" data-dim="gare" aria-hidden="true" style="--box-ink: #2753C9; --box-fill: #E1E8FB">
+        <p class="star-name">dim_gare</p>
+        <p class="star-q">où&nbsp;?</p>
+        <ul class="star-cols"><li data-col="nom_nl">nom_nl</li><li data-col="est_jonction_nord_midi">est_<wbr>jonction_<wbr>nord_<wbr>midi</li></ul>
+      </div>
+      <div class="star-box star-dim is-inked" data-dim="relation" aria-hidden="true" style="--box-ink: #7A5C0A; --box-fill: #F6EBC8">
+        <p class="star-name">dim_relation</p>
+        <p class="star-q">quel train&nbsp;?</p>
+        <ul class="star-cols"><li data-col="relation">relation</li><li data-col="type_train">type_train</li></ul>
+      </div>
+      <div class="star-box star-dim is-inked" data-dim="operateur" aria-hidden="true" style="--box-ink: #56656F; --box-fill: #E6EAED">
+        <p class="star-name">dim_operateur</p>
+        <p class="star-q">qui le fait rouler&nbsp;?</p>
+        <ul class="star-cols"><li data-col="operateur_nom">operateur_nom</li></ul>
+      </div>
+    </div>
+
+    <article class="project-detail q-detail" id="question-ou" data-question-detail="0">
+      <div class="col">
+        <p class="label">La question</p>
+        <h3>Où le réseau perd-il du temps&nbsp;?</h3>
+        <p class="label">La réponse</p>
+        <p class="result"><span class="mark">Huit des quinze points les moins ponctuels sont en province de Liège.</span> Le moins ponctuel, Hergenrath, juste avant la frontière allemande, n'a que 69&nbsp;% d'arrivées à l'heure.</p>
+        <p class="label">Ce que le modèle apporte</p>
+        <p>Dans les fichiers bruts, un point n'est qu'un numéro répété sur chaque ligne. <code>dim_gare</code> lui donne une fiche unique&nbsp;: son nom, et s'il fait partie de la jonction Nord-Midi.</p>
+      </div>
+      <div class="col">
+        <p class="label">Le chemin dans l'étoile</p>
+        <pre class="q-sql"><code>SELECT g.nom_nl,
+       avg(CAST(f.a_l_heure AS INT)) AS a_l_heure
+FROM fait_passage f
+JOIN dim_gare g ON f.ptcar_no = g.ptcar_no
+GROUP BY g.nom_nl
+ORDER BY a_l_heure</code></pre>
+      </div>
+    </article>
+
+    <article class="project-detail q-detail" id="question-quand" data-question-detail="1">
+      <div class="col">
+        <p class="label">La question</p>
+        <h3>Quand les retards montent-ils&nbsp;?</h3>
+        <p class="label">La réponse</p>
+        <p class="result"><span class="mark">En semaine, la pointe du soir pèse plus que celle du matin.</span> Vers 17&nbsp;h, la ponctualité descend sous 91&nbsp;%, contre environ 95&nbsp;% le week-end à la même heure.</p>
+        <p class="label">Ce que le modèle apporte</p>
+        <p>Les fichiers ne connaissent ni les jours fériés ni les heures de pointe. <code>dim_date</code> et <code>dim_heure</code> les ajoutent une fois pour toutes&nbsp;: sans elles, impossible de comparer un jour ouvrable à un week-end.</p>
+      </div>
+      <div class="col">
+        <p class="label">Le chemin dans l'étoile</p>
+        <pre class="q-sql"><code>SELECT h.heure, d.type_jour,
+       avg(CAST(f.a_l_heure AS INT)) AS a_l_heure
+FROM fait_passage f
+JOIN dim_date d ON f.date_cle = d.date_cle
+JOIN dim_heure h ON f.minute_cle = h.minute_cle
+GROUP BY h.heure, d.type_jour</code></pre>
+      </div>
+    </article>
+
+    <article class="project-detail q-detail" id="question-trains" data-question-detail="2">
+      <div class="col">
+        <p class="label">La question</p>
+        <h3>Quels trains souffrent le plus&nbsp;?</h3>
+        <p class="label">La réponse</p>
+        <p class="result"><span class="mark">Les trains internationaux.</span> Environ 70&nbsp;% d'arrivées à l'heure en fin de parcours belge, contre 95&nbsp;% pour les omnibus.</p>
+        <p class="label">Ce que le modèle apporte</p>
+        <p>Le type de train se déduit du code de la relation&nbsp;: IC, L, S, EURST… La règle vit à un seul endroit, <code>dim_relation</code>, au lieu d'être recopiée dans chaque rapport.</p>
+      </div>
+      <div class="col">
+        <p class="label">Le chemin dans l'étoile</p>
+        <pre class="q-sql"><code>SELECT r.type_train, o.operateur_nom,
+       avg(CAST(f.a_l_heure AS INT)) AS a_l_heure
+FROM fait_passage f
+JOIN dim_relation r ON f.relation_cle = r.relation_cle
+JOIN dim_operateur o ON f.operateur_code = o.operateur_code
+WHERE f.est_terminus
+GROUP BY r.type_train, o.operateur_nom</code></pre>
+      </div>
+    </article>
+
+    <article class="project-detail q-detail" id="question-jonction" data-question-detail="3">
+      <div class="col">
+        <p class="label">La question</p>
+        <h3>La jonction Nord-Midi freine-t-elle les trains&nbsp;?</h3>
+        <p class="label">La réponse</p>
+        <p class="result"><span class="mark">Oui&nbsp;: 11&nbsp;secondes perdues à quai, contre 6 ailleurs.</span> Entre deux points, un train y perd 1&nbsp;seconde, alors qu'il en regagne 5 sur le reste du réseau.</p>
+        <p class="label">Ce que le modèle apporte</p>
+        <p>Un simple drapeau dans <code>dim_gare</code> suffit à comparer les cinq points de la jonction au reste du réseau. Le retard pris à quai est calculé une seule fois, dans la table de faits.</p>
+      </div>
+      <div class="col">
+        <p class="label">Le chemin dans l'étoile</p>
+        <pre class="q-sql"><code>SELECT g.est_jonction_nord_midi,
+       avg(f.retard_pris_a_quai_min) * 60 AS secondes
+FROM fait_passage f
+JOIN dim_gare g ON f.ptcar_no = g.ptcar_no
+GROUP BY g.est_jonction_nord_midi</code></pre>
+      </div>
+    </article>
+
+    <article class="project-detail q-detail" id="question-trajet" data-question-detail="4">
+      <div class="col">
+        <p class="label">La question</p>
+        <h3>Le retard grandit-il le long du trajet&nbsp;?</h3>
+        <p class="label">La réponse</p>
+        <p class="result"><span class="mark">Oui, sur les longs trajets.</span> Le retard moyen reste autour de 1,6&nbsp;minute jusqu'au 12e point, puis dépasse 2&nbsp;minutes à partir du 17e.</p>
+        <p class="label">Ce que le modèle apporte</p>
+        <p>Le rang d'un point dans le trajet n'existe pas dans les données brutes. La table de faits le calcule une seule fois, avec une fonction de fenêtre, au lieu de le refaire dans chaque requête.</p>
+      </div>
+      <div class="col">
+        <p class="label">Le chemin dans l'étoile</p>
+        <pre class="q-sql"><code>SELECT least(f.rang_arret, 20) AS rang,
+       avg(f.retard_arrivee_min) AS retard_min
+FROM fait_passage f
+WHERE f.rang_arret >= 2
+GROUP BY least(f.rang_arret, 20)</code></pre>
+      </div>
+    </article>
+
+    <p class="model-note">Sans le modèle, chaque question repartirait de 4&nbsp;millions de lignes brutes, avec des dates en texte, aucun jour férié et aucun rang dans le trajet.</p>
+  </div>
+</section>
+
+<section class="section band" id="methode" aria-labelledby="titre-methode">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="titre-methode">ma façon de travailler.</h2>
+        <p class="intro">Je construis des pipelines et des modèles, mais je commence toujours par les personnes qui vont lire les chiffres.</p>
+      </div>
+    </div>
+    <div class="principles">
+      <article class="principle" style="--tilt: -0.8deg">
+        <h3>le client d'abord.</h3>
+        <p>Avant la moindre table, je cherche ce que le métier doit décider et ce qui le bloque. Un rapport n'a de valeur que s'il répond à une de ses questions.</p>
+        <p class="proof"><a href="#projet-odoo-services">chez Wavenet</a>&nbsp;: des listes plutôt que des graphiques, parce que les équipes RH et flotte en avaient besoin.</p>
+      </article>
+      <article class="principle" style="--tilt: 0.6deg">
+        <h3>le modèle avant le rapport.</h3>
+        <p>Un bon modèle dimensionnel transforme chaque question du métier en une jointure simple. C'est lui qui rend le tableau de bord juste, rapide et facile à faire évoluer.</p>
+        <p class="proof"><a href="#modele">le modèle Infrabel</a>&nbsp;: cinq dimensions, une question par chemin.</p>
+      </article>
+      <article class="principle" style="--tilt: -0.5deg">
+        <h3>l'IA pour aller plus vite.</h3>
+        <p>Je configure des agents IA pour mes projets data&nbsp;: le contexte, les consignes, les contrôles à respecter. Ils écrivent le code qui se répète, les tests et la documentation. Je garde la main sur le besoin, le modèle et la vérification des chiffres, et je passe le temps gagné avec le client.</p>
+        <p class="proof"><a href="#projet-trains">projet Infrabel</a>&nbsp;: chaque notebook testé sur des données de synthèse avant de toucher aux vraies.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="competences" aria-labelledby="titre-competences">
   <div class="wrap">
     <div class="section-head">
@@ -354,11 +552,12 @@
           <tr><td>Git</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Versionnement des rapports Odoo, projets perso</td></tr>
           <tr><td>Databricks et PySpark</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Pipeline Infrabel, Auto Loader, Delta, job, tableau de bord</td></tr>
           <tr><td>Odoo 19 et Studio</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Rapports en production pour les services de Wavenet</td></tr>
+          <tr><td>IA et agents</td><td><span class="dots" role="img" aria-label="3 sur 5"><span class="on">●●●</span><span class="off">○○</span></span></td><td>Agents configurés pour mes projets data&nbsp;: code, tests, documentation</td></tr>
           <tr><td>Airflow et Docker</td><td><span class="dots" role="img" aria-label="2 sur 5"><span class="on">●●</span><span class="off">○○○</span></span></td><td>Orchestration de mes projets perso</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="query-note">8 lignes renvoyées.</p>
+    <p class="query-note">9 lignes renvoyées.</p>
 
     <div class="stamps">
       <div class="stamp" style="color: #8A4F2A; --tilt: -8deg"><span>Technifutur</span><b>Consultant BI</b><span>2026</span></div>
